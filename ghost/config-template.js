@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
     production: {
         url: process.env.APP_URL,
-        // forceAdminSSL: true,
+        forceAdminSSL: true,
         database: {
             client: 'mysql',
             connection: {
