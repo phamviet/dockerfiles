@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
     production: {
         url: process.env.APP_URL,
-        forceAdminSSL: true,
+        // forceAdminSSL: true,
         database: {
             client: 'mysql',
             connection: {
@@ -18,6 +18,16 @@ module.exports = {
         server: {
             host: '0.0.0.0',
             port: '2368'
+        },
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: process.env.SMTP_LOGIN,
+                    pass: process.env.SMTP_PASSWORD
+                }
+            }
         },
         paths: {
             contentPath: path.join(process.env.GHOST_CONTENT, '/')
@@ -36,6 +46,16 @@ module.exports = {
         server: {
             host: '0.0.0.0',
             port: '2368'
+        },
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: process.env.SMTP_LOGIN,
+                    pass: process.env.SMTP_PASSWORD
+                }
+            }
         },
         paths: {
             contentPath: path.join(process.env.GHOST_CONTENT, '/')
